@@ -1,0 +1,7 @@
+ultralytics
+opencv-contrib-python
+numpy
+torch
+torchvision
+pillow
+sahi
