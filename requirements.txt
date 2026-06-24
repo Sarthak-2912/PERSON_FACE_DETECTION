@@ -5,3 +5,11 @@ torch
 torchvision
 pillow
 sahi
+fastapi
+uvicorn
+python-multipart
+opencv-python
+psutil
+requests
+insightface
+onnxruntime
