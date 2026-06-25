@@ -6,12 +6,13 @@ venv/
 
 .vscode/
 
-outputs/*
+outputs/*.mp4
 
 models/*.pt
 models/*.onnx
 models/*.caffemodel
 
 uploads/*.mp4
+
 
 !.gitkeep
