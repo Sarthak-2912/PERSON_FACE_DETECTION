@@ -14,7 +14,9 @@ def send_frame_pair(
     frame2,
     job_id,
     frame_number_1,
-    frame_number_2
+    frame_number_2,
+    timestamp_1,
+    timestamp_2
 ):
 
     success1, buffer1 = cv2.imencode(".jpg", frame1)
@@ -39,7 +41,9 @@ def send_frame_pair(
     data = {
         "job_id": job_id,
         "frame_number_1": frame_number_1,
-        "frame_number_2": frame_number_2
+        "frame_number_2": frame_number_2,
+        "timestamp_1": timestamp_1,
+        "timestamp_2": timestamp_2
     }
 
     try:

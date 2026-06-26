@@ -56,6 +56,8 @@ async def upload_frame(
 
     frame_number: int = Form(...),
 
+    timestamp: float = Form(...),
+
     frame: UploadFile = File(...)
 
 ):
@@ -83,10 +85,16 @@ async def upload_frame(
 
         REPLACEMENT_FRAMES[job_id] = {}
 
-    REPLACEMENT_FRAMES[job_id][frame_number] = image
+    REPLACEMENT_FRAMES[job_id][frame_number] = {
+        "frame": image,
+        "timestamp": timestamp
+    }
 
     print(
-        f"[{job_id}] Stored replacement frame {frame_number}"
+        f"[{job_id}] "
+        f"Stored replacement frame "
+        f"{frame_number} "
+        f"at {timestamp:.3f}s"
     )
 
     return {

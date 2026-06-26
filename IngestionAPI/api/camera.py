@@ -172,6 +172,8 @@ class CameraManager:
 
                     frame1, number1 = self.buffer_frames[-2]
                     frame2, number2 = self.buffer_frames[-1]
+                    timestamp1 = round(number1 / self.fps, 3)
+                    timestamp2 = round(number2 / self.fps, 3)
 
                     threading.Thread(
                         target=send_frame_pair,
@@ -180,7 +182,9 @@ class CameraManager:
                             frame2,
                             self.job_id,
                             number1,
-                            number2
+                            number2,
+                            timestamp1,
+                            timestamp2
                         ),
                         daemon=True
                     ).start()

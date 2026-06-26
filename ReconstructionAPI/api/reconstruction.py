@@ -109,18 +109,18 @@ def reconstruct_video(
 
         if frame_number in received_frames:
 
-            frame = received_frames[frame_number]
+            replacement = received_frames[frame_number]
+
+            frame = replacement["frame"]
+
+            timestamp = replacement["timestamp"]
 
             replaced_frames += 1
 
             print(
-
                 f"[{job_id}] "
-
-                f"Replacing Frame "
-
-                f"{frame_number}"
-
+                f"Replacing Frame {frame_number} "
+                f"at {timestamp:.3f}s"
             )
 
         writer.write(
